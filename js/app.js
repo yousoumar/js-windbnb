@@ -7,7 +7,6 @@ fetch('js/stays.json')
 })
 .then(data => {
     data.forEach(element => {
-        console.log(element)
         stays.push(element);
         let card = document.createElement('div');
         card.classList.add('card')
@@ -36,12 +35,33 @@ fetch('js/stays.json')
     });
 });
 
-/* header animation */
-
+/* header interactin*/
+const myForm = document.querySelector('form');
+const myHeader = document.querySelector('header');
+const toggle = document.querySelector('#toggle');
+let toggleCliked = false 
 window.addEventListener('scroll', () => {
     if (document.documentElement.scrollTop > 30){
-        document.querySelector('header').style.boxShadow = "0 0 3px rgba(0, 0, 0, 0.3)";
+        myHeader.style.boxShadow = "0 0 3px rgba(0, 0, 0, 0.3)";
     }else{
-        document.querySelector('header').style.boxShadow = "none";
+        myHeader.style.boxShadow = "none";
     }
+});
+
+
+toggle.addEventListener('click', ()=>{
+    if(!toggleCliked){
+        myForm.style.display = "flex";
+        toggle.innerText = "X";
+        toggle.style.padding = "0";
+        toggle.style.boxShadow = "none";
+        toggleCliked = true;
+    }else{
+        myForm.style.display = "none";
+        toggle.innerHTML = `<i class="fas fa-search"></i>`
+        toggle.style.boxShadow = "0px 1px 6px rgba(0, 0, 0, 0.1)";
+        toggle.style.padding = "0 2rem"
+        toggleCliked = false;
+    }
+   
 });
