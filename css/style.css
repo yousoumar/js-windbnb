@@ -35,10 +35,6 @@ button, input{
 button{
     cursor: pointer; 
 }
-
-ul{
-    list-style-type: none;
-}
 header{
     
     padding: 1rem .6rem;
@@ -114,13 +110,8 @@ form button{
     border-radius: 16px;
     width: 126px;
     height: 48px;
-    margin: 0 auto 1.5rem auto;
+    margin:  1.5rem auto;
     color: #F2F2F2;
-}
-form li{
-    margin: 2.25rem 0;
-    vertical-align: middle;
-    color: #4F4F4F;
 }
 main{
    
