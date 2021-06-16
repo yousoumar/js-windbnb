@@ -53,15 +53,15 @@ toggle.addEventListener('click', ()=>{
     if(!toggleCliked){
         myForm.style.display = "flex";
         toggle.innerText = "X";
-        toggle.style.padding = "0";
+        toggle.style.margin = " 0 -1.5rem";
         toggle.style.boxShadow = "none";
         toggleCliked = true;
     }else{
         myForm.style.display = "none";
         toggle.innerHTML = `<i class="fas fa-search"></i>`
         toggle.style.boxShadow = "0px 1px 6px rgba(0, 0, 0, 0.1)";
-        toggle.style.padding = "0 2rem"
         toggleCliked = false;
+        toggle.style.margin = " 0";
     }
    
 });

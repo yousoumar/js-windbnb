@@ -184,13 +184,7 @@ main{
                 height: 6rem;
                 
             }
-            #toggle{
-                height: 3rem;
-                width: 20rem;
-                margin: 0 auto;
-                justify-content: flex-end;
-                padding-right: 2rem;
-            }
+           
            
             #cards{
                 grid-template-columns: 1fr 1fr 1fr;
