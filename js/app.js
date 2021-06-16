@@ -36,3 +36,12 @@ fetch('js/stays.json')
     });
 });
 
+/* header animation */
+
+window.addEventListener('scroll', () => {
+    if (document.documentElement.scrollTop > 30){
+        document.querySelector('header').style.boxShadow = "0 0 5px rgba(0, 0, 0, 0.3)";
+    }else{
+        document.querySelector('header').style.boxShadow = "none";
+    }
+});
