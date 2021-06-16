@@ -125,7 +125,7 @@ main{
     @media only screen and (min-width:700px){
         main{
    
-            padding: 8rem .6rem 0 .6rem;
+            padding: 7rem .6rem 0 .6rem;
         }
         #cards{
             display: grid;
