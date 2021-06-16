@@ -10,7 +10,7 @@ fetch('js/stays.json')
     data.forEach(element => {
         let card = document.createElement('div');
         card.classList.add('card')
-        card.innerHTML = `<div class = "img"><img src = ${element.photo}></img></div>`
+        card.innerHTML = `<div class = "img"><img src = ${element.photo} /></div>`
         cards.appendChild(card);
     });
 });

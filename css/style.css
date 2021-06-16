@@ -17,7 +17,8 @@ body{
 img{
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
 }
 button, input{ 
     background-color: transparent;
@@ -109,6 +110,7 @@ main{
 #cards .img{
     border-radius: 24px;
     overflow: hidden;
+    height: 14rem;
     
 }
 @media only screen and (min-width:700px){
@@ -133,5 +135,10 @@ main{
     }
     #toggle .gests{
         color: #BDBDBD;
+    }
+    #cards{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem ;
     }
 }
