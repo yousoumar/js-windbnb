@@ -18,7 +18,7 @@ fetch('js/stays.json')
                               </div>
                               <div class ="details">
                                 <div class = "superhost"> SUPER HOST</div>
-                                <div class ="type">${element.type}</div>
+                                <div class ="type">${element.type} ${element.beds == null ? "" : `. ${element.beds} lits`  }</div>
                                 <div class ="rating"><i class="fas fa-star"></i> ${element.rating}</div>
                               </div>`
 
@@ -27,7 +27,7 @@ fetch('js/stays.json')
                                 <img src = ${element.photo} />
                               </div>
                               <div class ="details">
-                                <div class ="type">${element.type}</div>
+                                <div class ="type">${element.type} ${element.beds == null ? "" : `. ${element.beds} lits`  }</div>
                                 <div class ="rating"><i class="fas fa-star"></i> ${element.rating}</div>
                               </div>`
         }
