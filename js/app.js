@@ -20,7 +20,8 @@ fetch('js/stays.json')
                                 <div class = "superhost"> SUPER HOST</div>
                                 <div class ="type">${element.type} ${element.beds == null ? "" : `. ${element.beds} lits`  }</div>
                                 <div class ="rating"><i class="fas fa-star"></i> ${element.rating}</div>
-                              </div>`
+                              </div>
+                              <h2 class ="title">${element.title}</h2>`
 
         }else{
             card.innerHTML = `<div class = "img">
@@ -29,7 +30,8 @@ fetch('js/stays.json')
                               <div class ="details">
                                 <div class ="type">${element.type} ${element.beds == null ? "" : `. ${element.beds} lits`  }</div>
                                 <div class ="rating"><i class="fas fa-star"></i> ${element.rating}</div>
-                              </div>`
+                              </div>
+                              <h2 class ="title">${element.title}</h2>`
         }
     });
 });

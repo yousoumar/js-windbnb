@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@500;600;700&display=swap');
 *, *::after, *::before{
     box-sizing: border-box;
     margin: 0;
@@ -5,7 +6,7 @@
 }
 
 html{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Mulish', sans-serif;
     color: #333333;
 }
 body{
@@ -59,7 +60,6 @@ header .logo{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Mulish', sans-serif;
     padding: 0 2rem;
     color: rgba(235, 87, 87, 0.9);
     font-size: 1.1rem;
@@ -111,33 +111,44 @@ main{
     padding: .3rem;
     color: #4F4F4F;
 }
+#cards h2{
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1rem;
+}
 @media only screen and (min-width:281px){
     #cards .details {
         font-size: .7rem;
     }
-    @media only screen and (min-width:1024px){
-        header{
-           
-            height: 6rem;
-            
-        }
-        #toggle{
-            height: 3rem;
-            width: 20rem;
-            margin: 0 auto;
-            justify-content: flex-end;
-            padding-right: 2rem;
-        }
-       
+    @media only screen and (min-width:700px){
         #cards{
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 2rem ;
         }
-        #cards .details {
-        
-            font-size: .8rem;
+        @media only screen and (min-width:1024px){
+            header{
+               
+                height: 6rem;
+                
+            }
+            #toggle{
+                height: 3rem;
+                width: 20rem;
+                margin: 0 auto;
+                justify-content: flex-end;
+                padding-right: 2rem;
+            }
            
+            #cards{
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            #cards .details {
+            
+                font-size: .8rem;
+               
+            }
         }
     }
+    
 }
