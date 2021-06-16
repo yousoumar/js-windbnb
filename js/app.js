@@ -53,7 +53,6 @@ toggle.addEventListener('click', ()=>{
     if(!toggleCliked){
         myForm.style.display = "flex";
         toggle.innerText = "X";
-        toggle.style.margin = " 0 -1.5rem";
         toggle.style.boxShadow = "none";
         toggleCliked = true;
     }else{

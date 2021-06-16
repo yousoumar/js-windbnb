@@ -90,7 +90,7 @@ form .input-container{
     background: #FFFFFF;
     box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
     border-radius: 16px;
-    width: calc( 100% - .6rem);
+    width: calc( 100% - 4.1rem);
     max-width:75rem;
     height: 8rem;
     margin: 1rem auto 0 auto;
