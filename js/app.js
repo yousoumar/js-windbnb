@@ -114,6 +114,7 @@ myForm.addEventListener('submit', (e) => {
         }
         
     }else if (myInupts[1].value !== ""){
+        let gestsNubmbre  = parseInt(myInupts[1].value, 10) ;
         filtredStays = stays.filter(stay => stay.guests === gestsNubmbre );
     }
     if(filtredStays.length ===0){
