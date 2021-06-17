@@ -22,8 +22,13 @@ function createCard(array){
     
     if(array.length === 0){
         cards.innerHTML = ` <div class ="error">
-                                <div >Oups, nous n'avons pas un logement qui correspond à ces critères</div>
-                                <div> Mais on en construit tous les jours.</div>
+                                <div >
+                                    Oups, nous n'avons pas encore un logement qui correspond à ces critères. Mais on en construit tous les jours.
+                                </div>
+                                <div> 
+                                     Et en attendant, sachez que nous avons uniquement
+                                    des logements pour <strong>une</strong> ou <strong>deux</strong> personnes, et cela à <strong>Paris</strong>, <strong>Orléans</strong>, <strong>Toulouse</strong>, et <strong>Nice</strong>,.
+                                </div>
                                 <img src = "images/building.svg"/>
                             </div>`
         return;
@@ -94,8 +99,9 @@ myForm.addEventListener('submit', (e) => {
     e.preventDefault();
     let city = myInupts[0].value.trim().toLowerCase();
     let gestsNubmbre  = parseInt(myInupts[1].value, 10) ;
+    console.log(gestsNubmbre, typeof gestsNubmbre)
     let filtredStays;
-    if (city.length===0 && !gestsNubmbre){
+    if (city.length===0 && gestsNubmbre === NaN){
         filteredTtems[0].innerText = "France";
         filteredTtems[1].innerText =`+ ${stays.length}`;
         createCard(stays);
@@ -103,11 +109,11 @@ myForm.addEventListener('submit', (e) => {
     }
     if (city.length!==0){
         filtredStays = stays.filter(stay => stay.city.toLowerCase() === city);
-        if (gestsNubmbre || gestsNubmbre === 0){
+        if (gestsNubmbre !== NaN){
             filtredStays = filtredStays.filter(stay => stay.guests === gestsNubmbre );
         }
         
-    }else if (gestsNubmbre || gestsNubmbre === 0){
+    }else if (gestsNubmbre !==NaN ){
         filtredStays = stays.filter(stay => stay.guests === gestsNubmbre );
     }
     if(filtredStays.length ===0){
