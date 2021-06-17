@@ -136,15 +136,15 @@ form button{
 main{
     padding: 6rem .6rem .6rem;
 }
-#filtered-items{
+#filterDetails{
     display: flex;
     justify-content: space-between;
     padding:1.5rem 0 ;
 }
-#filtered-items div:first-child{
+#filterDetails div:first-child{
     font-weight: 700;
 }
-#filtered-items div:last-child{
+#filterDetails div:last-child{
     color: #4F4F4F;
 }
 

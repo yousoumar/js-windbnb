@@ -1,6 +1,6 @@
 "use strict";
 const cards = document.querySelector('#cards');
-const filteredTtems = document.querySelectorAll('#filtered-items div');
+const filterDetails = document.querySelectorAll('#filterDetails div');
 
 const stays = [];
 fetch('js/stays.json')
@@ -12,8 +12,8 @@ fetch('js/stays.json')
         stays.push(element);
         
     });
-    filteredTtems[0].innerText = "France";
-    filteredTtems[1].innerText =`+ ${stays.length}`;
+    filterDetails[0].innerText = "France";
+    filterDetails[1].innerText =`+ ${stays.length}`;
     createCard(stays);
 });
 
@@ -99,15 +99,15 @@ myForm.addEventListener('submit', (e) => {
     e.preventDefault();
     let filtredStays;
     if (myInupts[0].value==="" && myInupts[1].value === ""){
-        filteredTtems[0].innerText = "France";
-        filteredTtems[1].innerText =`+ ${stays.length}`;
+        filterDetails[0].innerText = "France";
+        filterDetails[1].innerText =`+ ${stays.length}`;
         createCard(stays);
         return;
     }
     if (myInupts[0].value !== ""){
         let city = myInupts[0].value.trim().toLowerCase();
         filtredStays = stays.filter(stay => stay.city.toLowerCase() === city);
-        filteredTtems[0].innerText = city.charAt(0).toUpperCase() + city.slice(1) ;
+        filterDetails[0].innerText = city.charAt(0).toUpperCase() + city.slice(1) ;
         if (myInupts[1].value !== ""){
             let gestsNubmbre  = parseInt(myInupts[1].value, 10) ;
             filtredStays = filtredStays.filter(stay => stay.guests === gestsNubmbre );
@@ -117,11 +117,11 @@ myForm.addEventListener('submit', (e) => {
         filtredStays = stays.filter(stay => stay.guests === gestsNubmbre );
     }
     if(filtredStays.length ===0){
-        filteredTtems[0].innerText = "";
-        filteredTtems[1].innerText ="";
+        filterDetails[0].innerText = "";
+        filterDetails[1].innerText ="";
     }else{
         
-        filteredTtems[1].innerText = `+ ${filtredStays.length}`;
+        filterDetails[1].innerText = `+ ${filtredStays.length}`;
     }
     
     createCard(filtredStays);
@@ -130,6 +130,7 @@ myForm.addEventListener('submit', (e) => {
 });
 
 formBtn.addEventListener('click', ()=>{
+    document.documentElement.scrollTop = 0;
     myForm.style.display = "none";
     toggle.innerHTML = `<i class="fas fa-search"></i>`;
     toggleCliked = false;
