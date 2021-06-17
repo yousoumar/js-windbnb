@@ -94,28 +94,40 @@ toggle.addEventListener('click', ()=>{
 
 /* search */
 const formBtn = document.querySelector('form button');
-
+let verifiedInputValue = true;
 myForm.addEventListener('submit', (e) => {
     e.preventDefault();
     let filtredStays;
-    if (myInupts[0].value==="" && myInupts[1].value === ""){
+    if (myInupts[0].value.trim()==="" && myInupts[1].value.trim() === ""){
         filterDetails[0].innerText = "France";
         filterDetails[1].innerText =`+ ${stays.length}`;
         createCard(stays);
         return;
     }
-    if (myInupts[0].value !== ""){
+    if (myInupts[0].value.trim() !== ""){
         let city = myInupts[0].value.trim().toLowerCase();
         filtredStays = stays.filter(stay => stay.city.toLowerCase() === city);
         filterDetails[0].innerText = city.charAt(0).toUpperCase() + city.slice(1) ;
-        if (myInupts[1].value !== ""){
+        if (myInupts[1].value.trim() !== ""){
             let gestsNubmbre  = parseInt(myInupts[1].value, 10) ;
-            filtredStays = filtredStays.filter(stay => stay.guests === gestsNubmbre );
+            if (gestsNubmbre === NaN){
+                verifiedInputValue = false;
+            }else{
+                verifiedInputValue = true;
+                filtredStays = stays.filter(stay => stay.guests === gestsNubmbre );
+            }
         }
         
-    }else if (myInupts[1].value !== ""){
-        let gestsNubmbre  = parseInt(myInupts[1].value, 10);
-        filtredStays = stays.filter(stay => stay.guests === gestsNubmbre );
+    }else if (myInupts[1].value.trim() !== ""){
+        filterDetails[0].innerText = "France";
+        let gestsNubmbre  = parseInt(myInupts[1].value.trim(), 10);
+        if (gestsNubmbre === NaN){
+            verifiedInputValue = false;
+        }else{
+            verifiedInputValue = true;
+            filtredStays = stays.filter(stay => stay.guests === gestsNubmbre );
+        }
+        
     }
     if(filtredStays.length ===0){
         filterDetails[0].innerText = "";
@@ -131,10 +143,13 @@ myForm.addEventListener('submit', (e) => {
 });
 
 formBtn.addEventListener('click', ()=>{
-    document.documentElement.scrollTop = 0;
-    myForm.style.display = "none";
-    toggle.innerHTML = `<i class="fas fa-search"></i>`;
-    toggleCliked = false;
+    if (verifiedInputValue){
+        document.documentElement.scrollTop = 0;
+        myForm.style.display = "none";
+        toggle.innerHTML = `<i class="fas fa-search"></i>`;
+        toggleCliked = false;
+    }
+    
 });
 
 window.addEventListener('load', ()=>{
