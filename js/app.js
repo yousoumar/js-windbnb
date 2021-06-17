@@ -1,5 +1,7 @@
 "use strict";
 const cards = document.querySelector('#cards');
+const filteredTtems = document.querySelectorAll('#filtered-items div');
+
 const stays = [];
 fetch('js/stays.json')
 .then(response => {
@@ -10,11 +12,22 @@ fetch('js/stays.json')
         stays.push(element);
         
     });
+    filteredTtems[0].innerText = "France";
+    filteredTtems[1].innerText =`+ ${stays.length}`;
     createCard(stays);
 });
 
 function createCard(array){
     cards.innerText ="";
+    
+    if(array.length === 0){
+        cards.innerHTML = ` <div class ="error">
+                                <div >Oups, nous n'avons un logement qui correspond à ces critères</div>
+                                <div> Mais on en construit tous les jours.</div>
+                                <img src = "images/building.svg"/>
+                            </div>`
+        return;
+    }
     array.forEach(element => {
         
         let card = document.createElement('div');
@@ -80,22 +93,32 @@ const formBtn = document.querySelector('form button');
 myForm.addEventListener('submit', (e) => {
     e.preventDefault();
     let city = myInupts[0].value.trim().toLowerCase();
-    let GestsNubmbre = myInupts[1].value.trim().toLowerCase();
+    let gestsNubmbre  = parseInt(myInupts[1].value, 10) ;
     let filtredStays;
-    if (city.length===0 && GestsNubmbre.length===0){
+    if (city.length===0 && !gestsNubmbre){
+        filteredTtems[0].innerText = "France";
+        filteredTtems[1].innerText =`+ ${stays.length}`;
         createCard(stays);
         return;
     }
     if (city.length!==0){
-        filtredStays = stays.filter(stay => stay.city.toLowerCase() == city);
-        
-        if (GestsNubmbre.length !== 0){
-            filtredStays = filtredStays.filter(stay => stay.maxGuests.toString().toLowerCase() === GestsNubmbre);
+        filtredStays = stays.filter(stay => stay.city.toLowerCase() === city);
+        if (gestsNubmbre){
+            filtredStays = filtredStays.filter(stay => stay.guests === gestsNubmbre );
         }
-        createCard(filtredStays);
-    }else if (GestsNubmbre.length !== 0){
         
+    }else if (gestsNubmbre){
+        filtredStays = stays.filter(stay => stay.guests === gestsNubmbre );
     }
+    if(filtredStays.length ===0){
+        filteredTtems[0].innerText = "";
+        filteredTtems[1].innerText ="";
+    }else{
+        filteredTtems[0].innerText = city.length == 0 ? 'France' : city.charAt(0).toUpperCase() + city.slice(1) ;
+        filteredTtems[1].innerText = `+ ${filtredStays.length}`;
+    }
+    
+    createCard(filtredStays);
    
     
 });
@@ -108,7 +131,6 @@ formBtn.addEventListener('click', ()=>{
 
 window.addEventListener('load', ()=>{
     setTimeout(()=>{
-        console.log(document.querySelector('.loader'))
         document.querySelector('.loader').style.display = "none";
     }, 2000);
 });

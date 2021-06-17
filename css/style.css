@@ -135,15 +135,15 @@ form button{
 main{
     padding: 6rem .6rem .6rem;
 }
-#filtered-items-numbre{
+#filtered-items{
     display: flex;
     justify-content: space-between;
     padding:1.5rem 0 ;
 }
-#filtered-items-numbre div:first-child{
+#filtered-items div:first-child{
     font-weight: 700;
 }
-#filtered-items-numbre div:last-child{
+#filtered-items div:last-child{
     color: #4F4F4F;
 }
 
@@ -182,7 +182,15 @@ main{
     font-style: normal;
     font-size: 1rem;
 }
-
+.error {
+    grid-column: 1 / span 3;
+}
+.error div{
+    margin: 2rem 0;
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-align: center;
+}
 /* responsive */
 
 @media only screen and (min-width:281px){
