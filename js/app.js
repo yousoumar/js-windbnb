@@ -30,7 +30,7 @@ function createCard(array){
                                     des logements pour <strong>une</strong> ou <strong>deux</strong> personnes, et cela à <strong>Paris</strong>, <strong>Orléans</strong>, <strong>Toulouse</strong>, et <strong>Nice</strong>,.
                                 </div>
                                 <img src = "images/building.svg"/>
-                            </div>`
+                            </div>`;
         return;
     }
     array.forEach(element => {
@@ -97,9 +97,6 @@ const formBtn = document.querySelector('form button');
 
 myForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    let city = myInupts[0].value.trim().toLowerCase();
-    let gestsNubmbre  = parseInt(myInupts[1].value, 10) ;
-    console.log(gestsNubmbre, typeof gestsNubmbre)
     let filtredStays;
     if (myInupts[0].value==="" && myInupts[1].value === ""){
         filteredTtems[0].innerText = "France";
@@ -107,20 +104,23 @@ myForm.addEventListener('submit', (e) => {
         createCard(stays);
         return;
     }
-    if (city.length!==0){
+    if (myInupts[0].value !== ""){
+        let city = myInupts[0].value.trim().toLowerCase();
         filtredStays = stays.filter(stay => stay.city.toLowerCase() === city);
-        if (gestsNubmbre !== NaN){
+        filteredTtems[0].innerText = city.length == 0 ? 'France' : city.charAt(0).toUpperCase() + city.slice(1) ;
+        if (myInupts[1].value !== ""){
+            let gestsNubmbre  = parseInt(myInupts[1].value, 10) ;
             filtredStays = filtredStays.filter(stay => stay.guests === gestsNubmbre );
         }
         
-    }else if (gestsNubmbre !==NaN ){
+    }else if (myInupts[1].value !== ""){
         filtredStays = stays.filter(stay => stay.guests === gestsNubmbre );
     }
     if(filtredStays.length ===0){
         filteredTtems[0].innerText = "";
         filteredTtems[1].innerText ="";
     }else{
-        filteredTtems[0].innerText = city.length == 0 ? 'France' : city.charAt(0).toUpperCase() + city.slice(1) ;
+        
         filteredTtems[1].innerText = `+ ${filtredStays.length}`;
     }
     
