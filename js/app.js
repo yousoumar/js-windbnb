@@ -105,3 +105,10 @@ formBtn.addEventListener('click', ()=>{
     toggle.innerHTML = `<i class="fas fa-search"></i>`;
     toggleCliked = false;
 });
+
+window.addEventListener('load', ()=>{
+    setTimeout(()=>{
+        console.log(document.querySelector('.loader'))
+        document.querySelector('.loader').style.display = "none";
+    }, 2000);
+});

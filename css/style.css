@@ -4,7 +4,33 @@
     margin: 0;
     padding: 0;
 }
+.loader{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+.loader div{
+    transform: scale(1.2);
+    margin-bottom: 10rem;
+    animation: loading .6s ease infinite alternate;
+}
 
+@keyframes loading {
+    100%{
+        transform: scale(1.3);
+    }
+    100%{
+        transform: scale(1.5);
+    }
+}
 html{
     font-family: 'Mulish', sans-serif;
     color: #333333;
@@ -120,6 +146,8 @@ main{
 #filtered-items-numbre div:last-child{
     color: #4F4F4F;
 }
+
+
 #cards .card{
     margin-bottom: 2rem;
 }
