@@ -1,4 +1,4 @@
-**Windbnb, une petite version de Airbnb, responsive et `mobile first`**, développée en `HTML`, `CSS`, et `JavaScript`.
+**Windbnb, une petite version de Airbnb, responsive et mobile first**, développée en `HTML`, `CSS`, et `JavaScript`.
 
 Les données proviennent d'un fichier `json`. Je travaille avec ce fichier exactement comme un `API`. 
 
