@@ -107,7 +107,7 @@ myForm.addEventListener('submit', (e) => {
     if (myInupts[0].value !== ""){
         let city = myInupts[0].value.trim().toLowerCase();
         filtredStays = stays.filter(stay => stay.city.toLowerCase() === city);
-        filteredTtems[0].innerText = city.length == 0 ? 'France' : city.charAt(0).toUpperCase() + city.slice(1) ;
+        filteredTtems[0].innerText = city.charAt(0).toUpperCase() + city.slice(1) ;
         if (myInupts[1].value !== ""){
             let gestsNubmbre  = parseInt(myInupts[1].value, 10) ;
             filtredStays = filtredStays.filter(stay => stay.guests === gestsNubmbre );
