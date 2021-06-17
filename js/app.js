@@ -101,7 +101,7 @@ myForm.addEventListener('submit', (e) => {
     let gestsNubmbre  = parseInt(myInupts[1].value, 10) ;
     console.log(gestsNubmbre, typeof gestsNubmbre)
     let filtredStays;
-    if (city.length===0 && gestsNubmbre === NaN){
+    if (myInupts[0].value==="" && myInupts[1].value === ""){
         filteredTtems[0].innerText = "France";
         filteredTtems[1].innerText =`+ ${stays.length}`;
         createCard(stays);
