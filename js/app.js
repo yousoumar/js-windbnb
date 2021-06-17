@@ -22,7 +22,7 @@ function createCard(array){
     
     if(array.length === 0){
         cards.innerHTML = ` <div class ="error">
-                                <div >Oups, nous n'avons un logement qui correspond à ces critères</div>
+                                <div >Oups, nous n'avons pas un logement qui correspond à ces critères</div>
                                 <div> Mais on en construit tous les jours.</div>
                                 <img src = "images/building.svg"/>
                             </div>`
@@ -103,11 +103,11 @@ myForm.addEventListener('submit', (e) => {
     }
     if (city.length!==0){
         filtredStays = stays.filter(stay => stay.city.toLowerCase() === city);
-        if (gestsNubmbre){
+        if (gestsNubmbre || gestsNubmbre === 0){
             filtredStays = filtredStays.filter(stay => stay.guests === gestsNubmbre );
         }
         
-    }else if (gestsNubmbre){
+    }else if (gestsNubmbre || gestsNubmbre === 0){
         filtredStays = stays.filter(stay => stay.guests === gestsNubmbre );
     }
     if(filtredStays.length ===0){
