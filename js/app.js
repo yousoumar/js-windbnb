@@ -20,42 +20,46 @@ fetch('js/stays.json')
 
 function createCard(array){
     cards.innerText ="";
-    
+    cards.style.opacity = "0";
+    if(array.length === 0){
+        cards.innerHTML = ` <div class ="error">
+                                <div class ="text">
+                                    <p >
+                                        Oups, nous n'en avons pas encore un qui correspond à ces critères. Mais on en construit tous les jours.
+                                    </p>
+                                    <p> 
+                                        En attendant, sachez que nous avons
+                                        des logements à Paris, Nantes, Toulouse, et Nice.
+                                    </p>
+                                </div>
+                                
+                                <img src = "images/building.svg"/>
+                            </div>`;
+        setTimeout ( () =>{
+            cards.style.opacity = "1";
+        }, 1000);
+        return;
+    }
+    array.forEach(element => {
+        
+        let card = document.createElement('div');
+        card.classList.add('card');
+
+        card.innerHTML = `<div class = "img">
+                            <img src = ${element.photo} />
+                            </div>
+                            <div class ="details">
+                            ${element.superHost ? `<div class = "superhost"> SUPER HOST</div>` : ""}
+                            <div class ="type">${element.type} ${element.beds == null ? "" : `. ${element.beds} lits`  }</div>
+                            <div class ="rating"><i class="fas fa-star"></i> ${element.rating}</div>
+                            </div>
+                            <h2 class ="title">${element.title}</h2>`
+
+        
+        cards.appendChild(card);
+    });
     setTimeout ( () =>{
-        if(array.length === 0){
-            cards.innerHTML = ` <div class ="error">
-                                    <div class ="text">
-                                        <p >
-                                            Oups, nous n'en avons pas encore un qui correspond à ces critères. Mais on en construit tous les jours.
-                                        </p>
-                                        <p> 
-                                            En attendant, sachez que nous avons
-                                            des logements à Paris, Nantes, Toulouse, et Nice.
-                                        </p>
-                                    </div>
-                                    
-                                    <img src = "images/building.svg"/>
-                                </div>`;
-            return;
-        }
-        array.forEach(element => {
-            
-            let card = document.createElement('div');
-            card.classList.add('card');
-  
-            card.innerHTML = `<div class = "img">
-                                <img src = ${element.photo} />
-                                </div>
-                                <div class ="details">
-                                ${element.superHost ? `<div class = "superhost"> SUPER HOST</div>` : ""}
-                                <div class ="type">${element.type} ${element.beds == null ? "" : `. ${element.beds} lits`  }</div>
-                                <div class ="rating"><i class="fas fa-star"></i> ${element.rating}</div>
-                                </div>
-                                <h2 class ="title">${element.title}</h2>`
-    
-            
-            cards.appendChild(card);
-        });
+        cards.style.opacity = "1";
     }, 1000);
     
    
