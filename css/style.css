@@ -253,7 +253,7 @@ main{
 
 @media only screen and (min-width:281px){
     #cards .details {
-        font-size: .8rem;
+        font-size: .7rem;
     }
     @media only screen and (min-width:700px){
        
@@ -283,11 +283,7 @@ main{
         #cards .card {
             margin-bottom: 0;
         }
-        #cards .details {
-            
-            font-size: .9rem;
-           
-        }
+      
         @media only screen and (min-width:1024px){
             #cards{
                 grid-template-columns: 1fr 1fr 1fr;
