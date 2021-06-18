@@ -118,7 +118,7 @@ form{
 }
 form input, form button{
     padding: 0 1rem;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color:rgba(0, 0, 0, 0.1);
     border-radius: 16px;
     margin: 5.5rem .6rem 2rem .6rem;
     padding: .5rem 1rem;
