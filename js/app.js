@@ -25,7 +25,7 @@ function createCard(array){
         cards.innerHTML = ` <div class ="error">
                                 <div class ="text">
                                     <p >
-                                        Oups, nous n'avons pas encore un logement qui correspond à ces critères. Mais on en construit tous les jours.
+                                        Oups, nous n'en avons pas encore un qui correspond à ces critères. Mais on en construit tous les jours.
                                     </p>
                                     <p> 
                                         En attendant, sachez que nous avons
