@@ -135,13 +135,6 @@ form button{
     color: #F2F2F2;
     transform: translate(3rem);
 }
-
-.hamburger-activated button, 
-.hamburger-activated input{
-    transform: translateX(0);
-    opacity: 1;
-    transition: transform .4s .2s ease, opacity .4s .2s ease;
-}
 #hamburger-button {
     display: flex;
     justify-content: center;
@@ -149,22 +142,28 @@ form button{
     align-items: flex-end;
     padding: 10px 0;
     cursor: pointer;
-    height: 1.5rem;
-    width: 2rem;  
+    width: 30px;
     position: relative; 
     z-index: 3;
 }
+.hamburger-activated button, 
+.hamburger-activated input{
+    transform: translateX(0);
+    opacity: 1;
+    transition: transform .4s .2s ease, opacity .4s .2s ease;
+}
+
 #hamburger-button .bar::before,
 #hamburger-button .bar::after,
 #hamburger-button .bar {
     display: block;
-    height: 3px;
+    height: 4px;
     background: #EB5757;
     margin: 0 auto;
     border-radius: 10px;
 }
 #hamburger-button .bar {
-    width: 22px;
+    width: 30px;
     position: relative; 
 }
 
@@ -175,11 +174,11 @@ form button{
 }
 #hamburger-button .bar::before {
     top: -7px;
-    width: 18px;
+    width: 22px;
 }
 #hamburger-button .bar::after {
     top: 7px;
-    width: 16px;
+    width: 20px;
 }
 
 
@@ -189,14 +188,14 @@ form button{
 
 .hamburger-activated #hamburger-button .bar::before {
     transform: rotate(45deg);
-    width: 22px;
+    width: 30px;
     top: 0;
 
 }
 .hamburger-activated #hamburger-button .bar::after {
     transform: rotate(-45deg);
     top: 0;
-    width: 22px;
+    width: 30px;
    
 }
 
