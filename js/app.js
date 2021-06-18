@@ -26,8 +26,8 @@ function createCard(array){
                                     Oups, nous n'avons pas encore un logement qui correspond à ces critères. Mais on en construit tous les jours.
                                 </div>
                                 <div> 
-                                     Et en attendant, sachez que nous avons uniquement
-                                    des logements pour <strong>une</strong> ou <strong>deux</strong> personnes, et cela à <strong>Paris</strong>, <strong>Orléans</strong>, <strong>Toulouse</strong>, et <strong>Nice</strong>.
+                                     Et en attendant, sachez que nous avons
+                                    des logements à <strong>Paris</strong>, <strong>Orléans</strong>, <strong>Toulouse</strong>, et <strong>Nice</strong>.
                                 </div>
                                 <img src = "images/building.svg"/>
                             </div>`;
