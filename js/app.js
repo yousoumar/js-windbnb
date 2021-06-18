@@ -33,7 +33,7 @@ function createCard(array){
                                     </p>
                                 </div>
                                 
-                                <img src = "images/building.svg"/>
+                                <img src = "images/building.svg" alt ="Image de fond"/>
                             </div>`;
         setTimeout ( () =>{
             cards.style.opacity = "1";
