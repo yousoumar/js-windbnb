@@ -273,7 +273,8 @@ main{
         }
         main{
    
-            padding: 7rem .6rem .6rem;
+            padding: 7rem .6rem 2rem .6rem;
+            border: 1px;
         }
         #cards{
             display: grid;
