@@ -4,7 +4,7 @@ Les données proviennent d'un fichier `json`. Je travaille avec ce fichier exact
 
 Vous pouvez visiter le site en cliquant sur l'image ci-dessous ou sur le lien en bas de la section `About`.
 
-`Données et design de base récupérés chez devchallenge.io, adaptés entièrement à mes goût par mes soins, tous droits réservés !`
+`Données et design de base récupérés chez devchallenge.io, adaptés entièrement à mes goûts par mes soins, tous droits réservés !`
 
 <a href = "https://yousoumar.github.io/js-windbnb"><img src = "images/screenshot.png"></img></a>
 
