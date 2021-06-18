@@ -88,9 +88,42 @@ header .logo{
     width: 10rem;
     position: relative; 
     z-index: 3;
-    
     padding: 0;
 
+}
+form{
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 5.5rem .6rem 2rem .6rem;
+    background-color: #FFF;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    display:none;
+    justify-content: space-between;
+    align-items: center;  
+
+}
+.hamburger-activated form{
+    display: flex;
+}
+form input{
+    padding: 0 1rem;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    padding: .5rem 1rem;
+}
+
+form button{
+    background: rgba(235, 87, 87, 0.9);
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    padding: .5rem 1rem;
+    margin-left: .5rem;
+    width: 3rem;
+    color: #F2F2F2;
 }
 
 #hamburger-button {
@@ -155,40 +188,7 @@ header .logo{
    
 }
 
-form{
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    padding: 5.5rem .6rem 2rem .6rem;
-    background-color: #FFF;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-    display:none;
-    justify-content: space-between;
-    align-items: center;  
 
-}
-.hamburger-activated form{
-    display: flex;
-}
-form input{
-    padding: 0 1rem;
-    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 16px;
-    padding: .5rem 1rem;
-}
-
-form button{
-    background: rgba(235, 87, 87, 0.9);
-    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 16px;
-    padding: .5rem 1rem;
-    margin-left: .5rem;
-    width: 3rem;
-    color: #F2F2F2;
-}
 
 /* main section */
 
@@ -256,15 +256,13 @@ main{
         font-size: .6rem;
     }
     @media only screen and (min-width:700px){
-        nav{
-            width: (100% - 22rem);
-           
-        }
+       
         #hamburger-button{
             display: none;
         }
         form{
             display: flex;
+            flex: none;
             width: 20rem;
             margin: .7rem 0 0 0;
             padding: 0;
