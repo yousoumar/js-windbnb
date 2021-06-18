@@ -74,6 +74,7 @@ header{
     position: fixed;
     left: 0;
     right: 0;
+    padding: 0 .6rem ;
     background: #FFFFFF;
     
 }
@@ -117,7 +118,7 @@ form{
     
 }
 form input, form button{
-    padding: 0 1rem;
+   
     background-color:rgba(0, 0, 0, 0.1);
     border-radius: 16px;
     margin: 5.5rem .6rem 2rem .6rem;
@@ -204,7 +205,7 @@ form button{
 /* main section */
 
 main{
-    padding: 6rem .6rem .6rem;
+    padding: 6rem 1rem 1rem;
 }
 #filterDetails{
     display: flex;
@@ -294,7 +295,7 @@ footer i:hover{
         font-size: .7rem;
     }
     @media only screen and (min-width:700px){
-       
+        
         #hamburger-button{
             display: none;
         }
@@ -313,11 +314,7 @@ footer i:hover{
             transform: translateX(0);
             margin: 0 0 0 .5rem;
         }
-        main{
-   
-            padding: 7rem .6rem 2rem .6rem;
-            border: 1px;
-        }
+       
         #cards{
             display: grid;
             grid-template-columns: 1fr 1fr;
