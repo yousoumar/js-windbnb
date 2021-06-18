@@ -225,7 +225,7 @@ main{
     flex-wrap: wrap;
     min-height: 3rem;
     color: #828282;
-    font-size: .6rem;
+    font-size: .66rem;
     
 }
 #cards .details i{
@@ -243,17 +243,18 @@ main{
     font-size: 1rem;
 }
 .error {
+    margin: -2rem 0;
     grid-column: 1 / span 3;
 }
 .error div{
-    margin: 2rem 0;
+    margin: 1rem 0;
     text-align: center;
 }
 /* responsive */
 
 @media only screen and (min-width:281px){
     #cards .details {
-        font-size: .6rem;
+        font-size: .8rem;
     }
     @media only screen and (min-width:700px){
        
@@ -285,7 +286,7 @@ main{
         }
         #cards .details {
             
-            font-size: .8rem;
+            font-size: .9rem;
            
         }
         @media only screen and (min-width:1024px){
