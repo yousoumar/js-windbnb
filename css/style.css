@@ -1,3 +1,5 @@
+/* loader */
+
 .loader{
     display: block;
     position: fixed;
@@ -31,6 +33,9 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+/* commun */
+
 html{
     font-family: 'Fira Mono', monospace;
     color: #333333;
@@ -108,7 +113,7 @@ form{
 .hamburger-activated form{
     display: flex;
 }
-form input{
+form input, form button{
     padding: 0 1rem;
     box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
     border-radius: 16px;
@@ -117,9 +122,6 @@ form input{
 
 form button{
     background: rgba(235, 87, 87, 0.9);
-    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 16px;
-    padding: .5rem 1rem;
     margin-left: .5rem;
     width: 3rem;
     color: #F2F2F2;
@@ -137,27 +139,24 @@ form button{
     position: relative; 
     z-index: 3;
 }
+#hamburger-button .bar::before,
+#hamburger-button .bar::after,
 #hamburger-button .bar {
     display: block;
-    width: 22px;
-    margin: auto;
     height: 3px;
     background: #EB5757;
+    margin: 0 auto;
     border-radius: 10px;
-    position: relative;
-    
-  
 }
+#hamburger-button .bar {
+    width: 22px;
+    position: relative; 
+}
+
 #hamburger-button .bar::before,
 #hamburger-button .bar::after {
     content: '';
-    display: block;
     position: absolute;
-    height: 3px;
-    background: #EB5757;
-    border-radius: 10px;
-    
-
 }
 #hamburger-button .bar::before {
     top: -7px;
@@ -171,9 +170,8 @@ form button{
 
 .hamburger-activated #hamburger-button .bar{
     background-color: transparent;
-    
-
 }
+
 .hamburger-activated #hamburger-button .bar::before {
     transform: rotate(45deg);
     width: 22px;
@@ -214,9 +212,13 @@ main{
     border-radius: 24px;
     overflow: hidden;
     height: 14rem;
+    transition: .6s transform ease;
     
 }
 
+#cards .img:hover{
+    transform: rotate(3deg);
+}
 #cards .details {
     display: flex;
     justify-content: space-between;
@@ -237,17 +239,23 @@ main{
     color: #4F4F4F;
 }
 #cards h2{
-    font-weight: 600;
-    font-style: normal;
     font-size: 1rem;
 }
 .error {
+    
     margin: -2rem 0;
     grid-column: 1 / span 3;
-}
-.error div{
-    margin: 1rem 0;
     text-align: center;
+ 
+    
+}
+.error p{
+    margin: 1rem 0;
+
+}
+.error img{
+   
+    opacity: .5;
 }
 /* responsive */
 
