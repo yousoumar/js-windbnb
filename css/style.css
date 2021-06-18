@@ -177,11 +177,11 @@ form button{
     position: absolute;
 }
 #hamburger-button .bar::before {
-    top: -7px;
+    top: -9px;
     width: 22px;
 }
 #hamburger-button .bar::after {
-    top: 7px;
+    top: 9px;
     width: 20px;
 }
 
