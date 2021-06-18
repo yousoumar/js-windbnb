@@ -29,7 +29,7 @@ function createCard(array){
                                     </p>
                                     <p> 
                                         En attendant, sachez que nous avons
-                                        des logements à Paris, Orléans, Toulouse, et Nice.
+                                        des logements à Paris, Nante, Toulouse, et Nice.
                                     </p>
                                 </div>
                                 
