@@ -61,12 +61,6 @@ function createCard(array){
    
 }
 
-
-
-
-
-
-
 /* search */
 
 const myForm = document.querySelector('form');
@@ -118,8 +112,6 @@ hamburger.addEventListener('click', () => {
     myHeader.classList.toggle("hamburger-activated");
     
 });
-
-
 
 /* loader */
 window.addEventListener('load', ()=>{
