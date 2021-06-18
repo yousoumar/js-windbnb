@@ -78,6 +78,7 @@ header{
     left: 0;
     right: 0;
     padding: 0 1rem 0 .7rem ;
+    z-index: 3;
     background: #FFFFFF;
     
 }
