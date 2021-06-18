@@ -101,19 +101,20 @@ form{
     top: 0;
     left: 0;
     right: 0;
-    height: 0;
+    height: 10rem;
     width: 100%;
     background-color: #FFF;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
     display:flex;
     justify-content: space-between;
     align-items: center;  
-    transition: .3s ease;
+    
+    opacity: 0;
 
 }
 .hamburger-activated form{
-
-    height: 10rem;
+    opacity: 1;
+    
 }
 form input, form button{
     padding: 0 1rem;
@@ -138,7 +139,7 @@ form button{
 .hamburger-activated input{
     transform: translateX(0);
     opacity: 1;
-    transition: transform .6s .6s ease, opacity .6s .6s ease;
+    transition: transform .4s .2s ease, opacity .4s .2s ease;
 }
 #hamburger-button {
     display: flex;
@@ -225,13 +226,8 @@ main{
     border-radius: 24px;
     overflow: hidden;
     height: 14rem;
-    transition: .6s transform ease;
-    
 }
 
-#cards .img:hover{
-    transform: rotate(3deg);
-}
 #cards .details {
     display: flex;
     justify-content: space-between;
