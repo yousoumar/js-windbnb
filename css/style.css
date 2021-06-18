@@ -101,23 +101,29 @@ form{
     top: 0;
     left: 0;
     right: 0;
+    height: 0;
     width: 100%;
-    padding: 5.5rem .6rem 2rem .6rem;
     background-color: #FFF;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-    display:none;
+    display:flex;
     justify-content: space-between;
     align-items: center;  
+    transition: .3s ease;
 
 }
 .hamburger-activated form{
-    display: flex;
+
+    height: 10rem;
 }
 form input, form button{
     padding: 0 1rem;
     box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
     border-radius: 16px;
+    margin: 5.5rem .6rem 2rem .6rem;
     padding: .5rem 1rem;
+    transform: translate(-3rem);
+    opacity: 0;
+    
 }
 
 form button{
@@ -125,8 +131,15 @@ form button{
     margin-left: .5rem;
     width: 3rem;
     color: #F2F2F2;
+    transform: translate(3rem);
 }
 
+.hamburger-activated button, 
+.hamburger-activated input{
+    transform: translateX(0);
+    opacity: 1;
+    transition: transform .6s .6s ease, opacity .6s .6s ease;
+}
 #hamburger-button {
     display: flex;
     justify-content: center;
@@ -269,15 +282,19 @@ main{
             display: none;
         }
         form{
-            display: flex;
+            height: auto;
+            opacity: 1;
             flex: none;
             width: 20rem;
             margin: .7rem 0 0 0;
             padding: 0 .3rem;
             position: static;
-            box-shadow:none;
-
-           
+            box-shadow:none;  
+        }
+        form input, form button{
+            opacity: 1;
+            transform: translateX(0);
+            margin: 0 0 0 .5rem;
         }
         main{
    
