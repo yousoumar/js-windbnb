@@ -265,7 +265,7 @@ main{
             flex: none;
             width: 20rem;
             margin: .7rem 0 0 0;
-            padding: 0;
+            padding: 0 .3rem;
             position: static;
             box-shadow:none;
 
