@@ -1,6 +1,7 @@
 "use strict";
 const cards = document.querySelector('#cards');
 const filterDetails = document.querySelectorAll('#filterDetails div');
+const myHeader = document.querySelector('header');
 
 const stays = [];
 fetch('js/stays.json')
@@ -62,36 +63,38 @@ function createCard(array){
     });
    
 }
-/* header interactin*/
 
-const myForm = document.querySelector('form');
 
-const myInput = document.querySelector('input');
+
 
 
 
 
 /* search */
-const formBtn = document.querySelector('form button');
+const myForm = document.querySelector('form');
+
+const myInput = document.querySelector('input');
+
 myForm.addEventListener('submit', (e) => {
+    
     e.preventDefault();
     let filtredStays=[];
-    let city;
-    if (myInput.value.trim()==="" ){
+    let city = myInput.value.trim().toLocaleLowerCase();
+    document.documentElement.scrollTop = 0;
+    myHeader.classList.remove("hamburger-activated");
+    if (city === "" ){
         filterDetails[0].innerText = "France";
         filterDetails[1].innerText =`+ ${stays.length}`;
         createCard(stays);
         return;
     }else{
-        city = myInput.value.trim().toLowerCase();
+        console.log(city);
         filtredStays = stays.filter(stay => stay.city.toLowerCase() === city);
-        
-        
     }
     
     if(filtredStays.length ===0){
         filterDetails[0].innerText = "";
-        filterDetails[1].innerText ="";
+        filterDetails[1].innerText = "";
     }else{
         
         filterDetails[1].innerText = `+ ${filtredStays.length}`;
@@ -103,8 +106,8 @@ myForm.addEventListener('submit', (e) => {
     
 });
 
+/* header interactin*/
 
-const myHeader = document.querySelector('header');
 window.addEventListener('scroll', () => {
     if (document.documentElement.scrollTop > 30){
         myHeader.style.boxShadow = "0 0 3px rgba(0, 0, 0, 0.3)";
@@ -112,6 +115,16 @@ window.addEventListener('scroll', () => {
         myHeader.style.boxShadow = "none";
     }
 });
+
+const hamburger = document.querySelector('#hamburger-button');
+hamburger.addEventListener('click', () => {
+    
+    myHeader.classList.toggle("hamburger-activated");
+    
+});
+
+
+
 
 window.addEventListener('load', ()=>{
     setTimeout(()=>{

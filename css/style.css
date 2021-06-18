@@ -69,40 +69,104 @@ header{
     position: fixed;
     left: 0;
     right: 0;
+    padding-right: .3rem;
     background: #FFFFFF;
-    padding: 1.5rem .6rem;  
+    
 }
 
 header .container{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 5rem;
     max-width:75rem;
     margin: 0 auto;
+    position: relative; 
+   
 }
+
 header .logo{
     width: 10rem;
+    
+    padding: 0;
 
 }
-#toggle{
-    width: 1rem;
-    height: 1rem;
-    padding: 1.5rem;
-    border-radius: 50%;
-    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
-    color: rgba(235, 87, 87, 0.9);
-    font-size: 1.1rem;
+
+#hamburger-button {
     display: flex;
     justify-content: center;
-    align-items: center;  
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 10px 0;
+    cursor: pointer;
+    height: 1.5rem;
+    width: 2rem;  
 }
-form{
-    display:flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-top: .7rem;
+#hamburger-button .bar {
+    display: block;
+    width: 22px;
+    margin: auto;
+    height: 3px;
+    background: #EB5757;
+    border-radius: 10px;
+    position: relative;
+    
+  
+}
+#hamburger-button .bar::before,
+#hamburger-button .bar::after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 3px;
+    background: #EB5757;
+    border-radius: 10px;
+    
+
+}
+#hamburger-button .bar::before {
+    top: -7px;
+    width: 18px;
+}
+#hamburger-button .bar::after {
+    top: 7px;
+    width: 16px;
 }
 
+
+.hamburger-activated #hamburger-button .bar{
+    background-color: transparent;
+    
+
+}
+.hamburger-activated #hamburger-button .bar::before {
+    transform: rotate(45deg);
+    width: 22px;
+    top: 0;
+
+}
+.hamburger-activated #hamburger-button .bar::after {
+    transform: rotate(-45deg);
+    top: 0;
+    width: 22px;
+   
+}
+
+form{
+    position: absolute;
+    top: 3.9rem;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 1.5rem .6rem 2rem .6rem;
+    background-color: #FFF;
+    display:none;
+    justify-content: space-between;
+    align-items: center;  
+}
+.hamburger-activated form{
+    display: flex;
+}
 form input{
     padding: 0 1rem;
     box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
@@ -114,9 +178,9 @@ form button{
     background: rgba(235, 87, 87, 0.9);
     box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
     border-radius: 16px;
-    width: auto;
     padding: .5rem 1rem;
     margin-left: .5rem;
+    width: 3rem;
     color: #F2F2F2;
 }
 
@@ -186,6 +250,22 @@ main{
         font-size: .6rem;
     }
     @media only screen and (min-width:700px){
+        nav{
+            width: (100% - 22rem);
+           
+        }
+        #hamburger-button{
+            display: none;
+        }
+        form{
+            display: flex;
+            width: 20rem;
+            margin: .7rem 0 0 0;
+            padding: 0;
+            position: static;
+
+           
+        }
         main{
    
             padding: 7rem .6rem .6rem;
