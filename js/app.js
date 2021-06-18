@@ -23,13 +23,16 @@ function createCard(array){
     
     if(array.length === 0){
         cards.innerHTML = ` <div class ="error">
-                                <p >
-                                    Oups, nous n'avons pas encore un logement qui correspond à ces critères. Mais on en construit tous les jours.
-                                </p>
-                                <p> 
-                                    En attendant, sachez que nous avons
-                                    des logements à Paris, Orléans, Toulouse, et Nice.
-                                </p>
+                                <div class ="text">
+                                    <p >
+                                        Oups, nous n'avons pas encore un logement qui correspond à ces critères. Mais on en construit tous les jours.
+                                    </p>
+                                    <p> 
+                                        En attendant, sachez que nous avons
+                                        des logements à Paris, Orléans, Toulouse, et Nice.
+                                    </p>
+                                </div>
+                                
                                 <img src = "images/building.svg"/>
                             </div>`;
         return;

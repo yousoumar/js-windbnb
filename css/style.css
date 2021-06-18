@@ -251,12 +251,20 @@ main{
     font-size: 1rem;
 }
 .error {
-    
-    margin: -2rem 0;
+    margin: -3rem auto 0 auto;
     grid-column: 1 / span 3;
     text-align: center;
- 
+    position: relative;
     
+}
+.error .text{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 1;
+    text-align: center;
 }
 .error p{
     margin: 1rem 0;
@@ -264,7 +272,7 @@ main{
 }
 .error img{
    
-    opacity: .5;
+    opacity: .1;
 }
 
 /* footer */
@@ -324,7 +332,11 @@ footer i:hover{
         #cards .card {
             margin-bottom: 0;
         }
-      
+        .error {
+            width: 50%;
+            
+        }
+        
         @media only screen and (min-width:1024px){
             #cards{
                 grid-template-columns: 1fr 1fr 1fr;
