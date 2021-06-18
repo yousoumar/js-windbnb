@@ -81,12 +81,13 @@ header .container{
     height: 5rem;
     max-width:75rem;
     margin: 0 auto;
-    position: relative; 
    
 }
 
 header .logo{
     width: 10rem;
+    position: relative; 
+    z-index: 3;
     
     padding: 0;
 
@@ -101,6 +102,8 @@ header .logo{
     cursor: pointer;
     height: 1.5rem;
     width: 2rem;  
+    position: relative; 
+    z-index: 3;
 }
 #hamburger-button .bar {
     display: block;
@@ -154,15 +157,18 @@ header .logo{
 
 form{
     position: absolute;
-    top: 3.9rem;
+    z-index: 2;
+    top: 0;
     left: 0;
     right: 0;
     width: 100%;
-    padding: 1.5rem .6rem 2rem .6rem;
+    padding: 5.5rem .6rem 2rem .6rem;
     background-color: #FFF;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
     display:none;
     justify-content: space-between;
     align-items: center;  
+
 }
 .hamburger-activated form{
     display: flex;
@@ -263,6 +269,7 @@ main{
             margin: .7rem 0 0 0;
             padding: 0;
             position: static;
+            box-shadow:none;
 
            
         }
