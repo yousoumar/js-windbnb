@@ -42,27 +42,18 @@ function createCard(array){
             
             let card = document.createElement('div');
             card.classList.add('card');
-            if(element.superHost){
-                card.innerHTML = `<div class = "img">
-                                    <img src = ${element.photo} />
-                                    </div>
-                                    <div class ="details">
-                                    <div class = "superhost"> SUPER HOST</div>
-                                    <div class ="type">${element.type} ${element.beds == null ? "" : `. ${element.beds} lits`  }</div>
-                                    <div class ="rating"><i class="fas fa-star"></i> ${element.rating}</div>
-                                    </div>
-                                    <h2 class ="title">${element.title}</h2>`
-        
-            }else{
-                card.innerHTML = `<div class = "img">
-                                    <img src = ${element.photo} />
-                                    </div>
-                                    <div class ="details">
-                                    <div class ="type">${element.type} ${element.beds == null ? "" : `. ${element.beds} lits`  }</div>
-                                    <div class ="rating"><i class="fas fa-star"></i> ${element.rating}</div>
-                                    </div>
-                                    <h2 class ="title">${element.title}</h2>`
-            }
+  
+            card.innerHTML = `<div class = "img">
+                                <img src = ${element.photo} />
+                                </div>
+                                <div class ="details">
+                                ${element.superHost ? `<div class = "superhost"> SUPER HOST</div>` : ""}
+                                <div class ="type">${element.type} ${element.beds == null ? "" : `. ${element.beds} lits`  }</div>
+                                <div class ="rating"><i class="fas fa-star"></i> ${element.rating}</div>
+                                </div>
+                                <h2 class ="title">${element.title}</h2>`
+    
+            
             cards.appendChild(card);
         });
     }, 1000);
