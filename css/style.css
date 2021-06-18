@@ -213,13 +213,9 @@ main{
     display: flex;
     justify-content: space-between;
     padding:1.5rem 0 ;
-}
-#filterDetails div:first-child{
-    font-weight: 700;
-}
-#filterDetails div:last-child{
     color: #4F4F4F;
 }
+
 
 
 #cards .card{
