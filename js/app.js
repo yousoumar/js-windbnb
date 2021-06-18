@@ -65,76 +65,37 @@ function createCard(array){
 /* header interactin*/
 
 const myForm = document.querySelector('form');
-const myHeader = document.querySelector('header');
-const toggle = document.querySelector('#toggle');
-let toggleCliked = false; 
-const myInupts = document.querySelectorAll('input');
-window.addEventListener('scroll', () => {
-    if (document.documentElement.scrollTop > 30){
-        myHeader.style.boxShadow = "0 0 3px rgba(0, 0, 0, 0.3)";
-    }else{
-        myHeader.style.boxShadow = "none";
-    }
-});
+
+const myInput = document.querySelector('input');
 
 
-toggle.addEventListener('click', ()=>{
-    if(!toggleCliked){
-        myForm.style.display = "flex";
-        toggle.innerText = "X";
-        toggleCliked = true;
-    }else{
-        myForm.style.display = "none";
-        toggle.innerHTML = `<i class="fas fa-search"></i>`
-        toggleCliked = false;
-        
-    }
-   
-});
+
 
 /* search */
 const formBtn = document.querySelector('form button');
-let verifiedInputValue = true;
 myForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    let filtredStays;
-    if (myInupts[0].value.trim()==="" && myInupts[1].value.trim() === ""){
+    let filtredStays=[];
+    let city;
+    if (myInput.value.trim()==="" ){
         filterDetails[0].innerText = "France";
         filterDetails[1].innerText =`+ ${stays.length}`;
         createCard(stays);
         return;
-    }
-    if (myInupts[0].value.trim() !== ""){
-        let city = myInupts[0].value.trim().toLowerCase();
+    }else{
+        city = myInput.value.trim().toLowerCase();
         filtredStays = stays.filter(stay => stay.city.toLowerCase() === city);
-        filterDetails[0].innerText = city.charAt(0).toUpperCase() + city.slice(1) ;
-        if (myInupts[1].value.trim() !== ""){
-            let gestsNubmbre  = parseInt(myInupts[1].value, 10) ;
-            if (gestsNubmbre === NaN){
-                verifiedInputValue = false;
-            }else{
-                verifiedInputValue = true;
-                filtredStays = stays.filter(stay => stay.guests === gestsNubmbre );
-            }
-        }
         
-    }else if (myInupts[1].value.trim() !== ""){
-        filterDetails[0].innerText = "France";
-        let gestsNubmbre  = parseInt(myInupts[1].value.trim(), 10);
-        if (gestsNubmbre === NaN){
-            verifiedInputValue = false;
-        }else{
-            verifiedInputValue = true;
-            filtredStays = stays.filter(stay => stay.guests === gestsNubmbre );
-        }
         
     }
+    
     if(filtredStays.length ===0){
         filterDetails[0].innerText = "";
         filterDetails[1].innerText ="";
     }else{
         
         filterDetails[1].innerText = `+ ${filtredStays.length}`;
+        filterDetails[0].innerText = city.charAt(0).toUpperCase() + city.slice(1) ;
     }
     
     createCard(filtredStays);
@@ -142,14 +103,14 @@ myForm.addEventListener('submit', (e) => {
     
 });
 
-formBtn.addEventListener('click', ()=>{
-    if (verifiedInputValue){
-        document.documentElement.scrollTop = 0;
-        myForm.style.display = "none";
-        toggle.innerHTML = `<i class="fas fa-search"></i>`;
-        toggleCliked = false;
+
+const myHeader = document.querySelector('header');
+window.addEventListener('scroll', () => {
+    if (document.documentElement.scrollTop > 30){
+        myHeader.style.boxShadow = "0 0 3px rgba(0, 0, 0, 0.3)";
+    }else{
+        myHeader.style.boxShadow = "none";
     }
-    
 });
 
 window.addEventListener('load', ()=>{
