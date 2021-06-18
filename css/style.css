@@ -266,6 +266,27 @@ main{
    
     opacity: .5;
 }
+
+/* footer */
+footer{
+    border-top: 1px solid #4F4F4F;
+    margin: 2rem 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+footer img{
+    width: 60%;
+    margin: 1rem auto;
+}
+footer i{
+    cursor: pointer;
+    transition: .3s color ease;
+}
+footer i:hover{
+    color: #EB5757;
+}
 /* responsive */
 
 @media only screen and (min-width:281px){
