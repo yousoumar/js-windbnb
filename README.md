@@ -1,6 +1,6 @@
 **Windbnb, une petite version de Airbnb, responsive et mobile first**, développée en `HTML`, `CSS`, et `JavaScript`.
 
-Les données proviennent d'un fichier `json`. Je travaille avec ce fichier exactement comme un `API`.
+Les données proviennent d'un fichier `json`. Je travaille avec ce fichier exactement comme si c'était la réponse d'un appel à une `API`.
 
 On peut faire de recherches par nom de ville, avec gestion des villes non existantes ou sans logement.
 
