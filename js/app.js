@@ -112,11 +112,13 @@ window.addEventListener('scroll', () => {
 
 const hamburger = document.querySelector('#hamburger-button');
 hamburger.addEventListener('click', () => {
-
     myHeader.classList.toggle("hamburger-activated");
     
 });
-
+const myButton = document.querySelector('form button');
+myButton.addEventListener('click', ()=>{
+    myHeader.classList.remove("hamburger-activated");
+});
 /* loader */
 window.addEventListener('load', ()=>{
     setTimeout(()=>{
