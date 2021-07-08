@@ -37,7 +37,7 @@ function createCard(array){
                             </div>`;
         setTimeout ( () =>{
             cards.style.opacity = "1";
-        }, 1000);
+        }, 500);
         return;
     }
     array.forEach(element => {
@@ -74,12 +74,13 @@ myForm.addEventListener('submit', (e) => {
     
     e.preventDefault();
     let filtredStays=[];
-    let city = myInput.value.trim().toLocaleLowerCase();
+    let city = myInput.value.trim().toLowerCase();
 
     if (city === "" ){
         filterDetails[0].innerText = "France";
         filterDetails[1].innerText =`+ ${stays.length}`;
         createCard(stays);
+        myHeader.classList.remove("hamburger-activated");
         return;
     }else{
         filtredStays = stays.filter(stay => stay.city.toLowerCase() === city);
@@ -115,10 +116,7 @@ hamburger.addEventListener('click', () => {
     myHeader.classList.toggle("hamburger-activated");
     
 });
-const myButton = document.querySelector('form button');
-myButton.addEventListener('click', ()=>{
-    myHeader.classList.remove("hamburger-activated");
-});
+
 /* loader */
 window.addEventListener('load', ()=>{
     setTimeout(()=>{

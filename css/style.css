@@ -113,11 +113,12 @@ form{
     display:flex;
     justify-content: space-between;
     align-items: center;  
-    
     opacity: 0;
+    pointer-events: none;
 
 }
 .hamburger-activated form{
+    pointer-events: unset;
     opacity: 1;
     
 }
