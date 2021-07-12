@@ -317,6 +317,7 @@ footer i:hover{
             padding: 0 -.3rem;
             position: static;
             box-shadow:none;  
+            pointer-events: unset;
         }
        
         form input, form button{
