@@ -1,3 +1,9 @@
+*, ::after, ::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 /* loader */
 
 .loader{
@@ -14,25 +20,19 @@
     z-index: 10;
 }
 .loader div{
-    transform: scale(1.2);
+    
     margin-bottom: 10rem;
-    animation: loading .6s ease infinite alternate;
+    animation: loading 3s ease infinite ;
 }
 
 
 @keyframes loading {
+    
     100%{
-        transform: scale(1.3);
-    }
-    100%{
-        transform: scale(1.5);
+        transform: rotate(360deg);
     }
 }
-*, ::after, ::before{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
+
 
 /* commun */
 
@@ -317,7 +317,7 @@ footer i:hover{
             padding: 0 -.3rem;
             position: static;
             box-shadow:none;  
-            pointer-events: unset;
+            pointer-events: auto;
         }
        
         form input, form button{
