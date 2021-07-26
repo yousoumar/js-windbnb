@@ -47,13 +47,13 @@ function createCard(array){
 
         card.innerHTML = `<div class = "img">
                             <img src = ${element.photo} />
-                            </div>
-                            <div class ="details">
+                          </div>
+                          <div class ="details">
                             ${element.superHost ? `<div class = "superhost"> SUPER HOST</div>` : ""}
                             <div class ="type">${element.type} ${element.beds == null ? "" : `. ${element.beds} lits`  }</div>
                             <div class ="rating"><i class="fas fa-star"></i> ${element.rating}</div>
-                            </div>
-                            <h2 class ="title">${element.title}</h2>`
+                          </div>
+                          <h2 class ="title">${element.title}</h2>`
 
         
         cards.appendChild(card);
@@ -101,15 +101,8 @@ myForm.addEventListener('submit', (e) => {
     
 });
 
-/* header interactin*/
+/* header */
 
-window.addEventListener('scroll', () => {
-    if (document.documentElement.scrollTop > 30){
-        myHeader.style.boxShadow = "0 0 3px rgba(0, 0, 0, 0.3)";
-    }else{
-        myHeader.style.boxShadow = "none";
-    }
-});
 
 const hamburger = document.querySelector('#hamburger-button');
 hamburger.addEventListener('click', () => {
@@ -121,5 +114,5 @@ hamburger.addEventListener('click', () => {
 window.addEventListener('load', ()=>{
     setTimeout(()=>{
         document.querySelector('.loader').style.display = "none";
-    }, 2000);
+    }, 1500);
 });

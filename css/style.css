@@ -13,32 +13,33 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #FFF;
+    background-color: rgb(40, 40, 40);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 10;
+    padding-bottom: 10rem;
+    text-align: center;
 }
-.loader div{
-    
-    margin-bottom: 10rem;
-    animation: loading 3s ease infinite ;
+.loader img{
+    width: 15rem;
+    margin: 0 auto;
+
+}
+.loader p{
+    font-size: .9rem;
+    margin-top: 1rem;
+
 }
 
-
-@keyframes loading {
-    
-    100%{
-        transform: rotate(360deg);
-    }
-}
 
 
 /* commun */
 
 html{
-    font-family: 'Fira Mono', monospace;
-    color: #333333;
+    font-family: Monaco, Menlo, 'Fira Mono', monospace;
+    background-color: rgb(40, 40, 40);
+    color: #FFF;
    
 }
 body{
@@ -54,6 +55,7 @@ img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    
 }
 button, input{ 
     background-color: transparent;
@@ -79,15 +81,16 @@ header{
     right: 0;
     padding: 0 1rem 0 .7rem ;
     z-index: 3;
-    background: #FFFFFF;
-    
+    background: rgb(40, 40, 40);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+   
 }
 
 header .container{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 5rem;
+    padding: 1rem 0 1.5rem 0;
     max-width:75rem;
     margin: 0 auto;
    
@@ -106,9 +109,9 @@ form{
     top: 0;
     left: 0;
     right: 0;
-    height: 10rem;
+    height: 12rem;
     width: 100%;
-    background-color: #FFF;
+    background-color: rgb(40, 40, 40);
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
     display:flex;
     justify-content: space-between;
@@ -124,7 +127,7 @@ form{
 }
 form input, form button{
    
-    background-color:rgba(0, 0, 0, 0.1);
+    background-color:rgba(255, 255, 255, 0.1);
     border-radius: 16px;
     margin: 5.5rem 1rem 2rem 1rem;
     padding: .5rem 1rem;
@@ -147,9 +150,10 @@ form button{
     align-items: flex-end;
     padding: 10px 0;
     cursor: pointer;
-    width: 30px;
+    width: 45px;
     position: relative; 
     z-index: 3;
+    height: 45px;
 }
 .hamburger-activated button, 
 .hamburger-activated input{
@@ -166,9 +170,10 @@ form button{
     background: #EB5757;
     margin: 0 auto;
     border-radius: 10px;
+    pointer-events: none;
 }
 #hamburger-button .bar {
-    width: 30px;
+    width: 45px;
     position: relative; 
 }
 
@@ -178,11 +183,11 @@ form button{
     position: absolute;
 }
 #hamburger-button .bar::before {
-    top: -9px;
-    width: 22px;
+    top: -12px;
+    width: 30px;
 }
 #hamburger-button .bar::after {
-    top: 9px;
+    top: 12px;
     width: 20px;
 }
 
@@ -193,14 +198,14 @@ form button{
 
 .hamburger-activated #hamburger-button .bar::before {
     transform: rotate(45deg);
-    width: 30px;
+    width: 45px;
     top: 0;
 
 }
 .hamburger-activated #hamburger-button .bar::after {
     transform: rotate(-45deg);
     top: 0;
-    width: 30px;
+    width: 45px;
    
 }
 
@@ -215,7 +220,7 @@ main{
     display: flex;
     justify-content: space-between;
     padding:1.5rem 0 ;
-    color: #4F4F4F;
+    color: #ffffff;
 }
 
 
@@ -227,6 +232,15 @@ main{
     border-radius: 24px;
     overflow: hidden;
     height: 14rem;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    
+}
+#cards .img img{
+    transition: transform .5s ease;
+}
+#cards .img img:hover{
+    
+    transform: scale(1.2);
 }
 
 #cards .details {
@@ -235,7 +249,7 @@ main{
     align-items: center;
     flex-wrap: wrap;
     min-height: 3rem;
-    color: #828282;
+    color: #c9c9c9;
     font-size: .66rem;
     
 }
@@ -243,10 +257,10 @@ main{
     color: #EB5757;;
 }
 #cards .superhost{
-    border: 1px solid #4F4F4F;
+    border: 1px solid #c9c9c9;
     border-radius: 12px;
     padding: .3rem;
-    color: #4F4F4F;
+    color: #c9c9c9;
 }
 #cards h2{
     font-size: 1rem;
